@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/DSeanGray/come_dine_with_me.png?label=ready&title=Ready)](https://waffle.io/DSeanGray/come_dine_with_me?utm_source=badge)
 # Come Wine With Me
 
 Come wine with me is a revolutionary app to bring local diners together for a night of great food and wine!
