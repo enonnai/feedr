@@ -1,14 +1,11 @@
-[![Stories in Ready](https://badge.waffle.io/DSeanGray/come_dine_with_me.png?label=ready&title=Ready)](https://waffle.io/DSeanGray/come_dine_with_me?utm_source=badge)
-# Come Wine With Me
+# feedr
 
-Come wine with me is a revolutionary app to bring local diners together for a night of great food and wine!
-
+Feedr is a revolutionary app to bring local diners together for a night of great food and wine!
 Diners attend a dinner party and as the night comes to an end, can donate to the host for the night and leave a rating on the app.
-
 ```
 As a sociable wine and food lover
 So that i can wine with local winers,
-i would like to sign up to come wine with me.
+i would like to sign up to feedr.
 ```
 ```
 As a sociable wine and food lover,
