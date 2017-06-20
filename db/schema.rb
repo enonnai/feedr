@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170620141406) do
     t.string "info"
     t.string "date_time"
     t.integer "nr_guests"
+
   end
 
 end
