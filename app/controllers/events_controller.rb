@@ -5,11 +5,15 @@ class EventsController < ApplicationController
   end
 
   def new
-    
+
   end
 
   def create
 
+  end
+
+  def show
+    redirect_to '/events/index'
   end
 
 end
