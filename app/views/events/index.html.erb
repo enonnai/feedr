@@ -1,1 +1,8 @@
 <h1>Hello, Rails!</h1>
+<% if current_user %>
+  <%= form_with url: '/users/sign_out', method: "delete", local: true do |form| %>
+    <%= form.submit value: "Log out" %>
+  <% end %>
+<% else %>
+ <%= link_to 'Sign in', new_user_session_path %>
+<% end %>
