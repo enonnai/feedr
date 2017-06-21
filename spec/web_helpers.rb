@@ -9,10 +9,9 @@ def sign_up(email = "test@example.com")
 end
 
 def create_event
-  visit 'events/new'
   fill_in "event_title", with: "Mexican dinner"
   fill_in "event_info", with: "Chilli con carne and margaritas for all. Sombreros and drinks welcome!"
   fill_in "event_date_time", with: "Friday at 8 PM"
-  fill_in "event_guests", with: 6
-  click_button "Publish"
+  fill_in "event_nr_guests", with: 6
+  click_button "Submit"
 end

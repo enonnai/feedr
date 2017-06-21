@@ -1,1 +1,13 @@
 <h3>Create your Event!</h3>
+
+<%= form_for @event do |a| %>   
+  <%= a.label :title %>   
+  <%= a.text_field :title %>  <br>
+  <%= a.label :info %> 
+  <%= a.text_area :info %>   <br>
+  <%= a.label :date %> 
+  <%= a.datetime_local_field :date_time %>   <br>
+  <%= a.label :nr_guests %> 
+  <%= a.number_field :nr_guests %>   <br>
+  <%= a.submit "Submit", class: 'button' %>  
+<% end %>
