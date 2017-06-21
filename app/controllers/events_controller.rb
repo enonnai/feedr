@@ -5,7 +5,8 @@ class EventsController < ApplicationController
   end
 
   def new
-
+    @event = Event.new
+    redirect_to '/events/index'
   end
 
   def create

@@ -1,10 +1,13 @@
 <h3>Create your Event!</h3>
 
-
-<form class="" action="index.html" method="post">
-  Event Title:<input type="text" name="event_title" value=""><br>
-  Event Info:<input type="text" name="event_info" value=""><br>
-  Event Date:<input type="date" name="event_date_time" value=""><br>
-  Guest Capacity:<input type="number" name="event_guests" value=""><br>
-  <button type="button" name="Submit">Submit</button>
-</form>
+<%= form_for @event do |a| %>   
+  <%= a.label :title %>   
+  <%= a.text_field :title %>  <br>
+  <%= a.label :info %> 
+  <%= a.text_area :info %>   <br>
+  <%= a.label :date %> 
+  <%= a.datetime_local_field :date_time %>   <br>
+  <%= a.label :nr_guests %> 
+  <%= a.number_field :nr_guests %>   <br>
+  <%= a.submit "Submit", class: 'button' %>  
+<% end %>
