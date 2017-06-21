@@ -1,12 +1,12 @@
 <h3>My Profile</h3>
 
-Name: <%= Profile.last.name %>
+Name: <%= current_user.profile.name %>
 <br>
 <br>
-Location: <%= Profile.last.location %>
+Location: <%= current_user.profile.location %>
 <br>
 <br>
-Bio: <%= Profile.last.short_bio %>
+Bio: <%= current_user.profile.short_bio %>
 <br>
 <br>
 <%= link_to '<button type="button">Return to Events</button>'.html_safe, root_path %>
