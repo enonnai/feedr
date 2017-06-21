@@ -14,5 +14,8 @@
     <br>
   <%= form.submit "Submit", class: 'button' %>
   <br>
-  <% end %>
+  <%end %>
+  <% else %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 <% end %>

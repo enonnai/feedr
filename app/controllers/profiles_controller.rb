@@ -17,4 +17,8 @@ class ProfilesController < ApplicationController
     params.require(:profile).permit(:name, :location, :short_bio)
   end
 
+  def flash_message
+    flash[:notice] = 'You need to be logged in to create a profile'
+  end
+
 end

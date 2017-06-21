@@ -9,3 +9,9 @@
 <% else %>
  <%= link_to 'Log in', new_user_session_path %>
 <% end %>
+
+<% if Profile.last.id == true %>
+  <%= link_to 'My Profile', profile_path %>
+<% else %>
+  <%= link_to 'Create Profile', new_profile_path %>
+<% end %>
