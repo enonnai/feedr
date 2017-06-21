@@ -1,0 +1,18 @@
+<h1>Create your Profile</h1>
+
+<% if current_user %>
+  <%= form_for @profile do |form| %>
+    Name:
+    <%= form.text_field :name %>
+    <br>
+    Location:
+    <%= form.text_field :location %>
+    <br>
+    Tell us about yourself:
+    <%= form.text_field :short_bio %>
+    <br>
+    <br>
+  <%= form.submit "Submit", class: 'button' %>
+  <br>
+  <% end %>
+<% end %>

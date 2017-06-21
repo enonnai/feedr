@@ -17,7 +17,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    # redirect_to '/events/index'
+    redirect_to '/events/index'
   end
 
   private
@@ -29,4 +29,5 @@ class EventsController < ApplicationController
   def flash_message
     flash[:notice] = 'Your event has been added'
   end
+
 end
