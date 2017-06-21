@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-def sign_up(email = "test@gmail.com")
+def sign_up(email = "test@example.com")
   visit '/users/sign_up'
   fill_in 'user_email', with: email
   fill_in 'user_password', with: "password"
