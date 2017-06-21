@@ -7,6 +7,6 @@ RSpec.feature "Events", type: :feature do
     sign_up
     click_link 'Add your Event'
     create_event
-    expect(page).to have_content("Your event has been added and can now be seen!")
+    expect(page).to have_content("Your event has been added")
   end
 end
