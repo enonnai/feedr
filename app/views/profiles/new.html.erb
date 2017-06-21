@@ -1,0 +1,16 @@
+<h1>Create your Profile</h1>
+
+<% if current_user %>
+  <%= form_with url: '/events/index', method: "get", local: true do |form| %>
+    Name:
+    <%= form.text_field :name %>
+    <br>
+    Location:
+    <%= form.text_field :location %>
+    <br>
+    Tell us about yourself:
+    <%= form.text_field :bio %>
+    <br>
+    <%= form.submit value: "Submit" %>
+  <% end %>
+<% end %>

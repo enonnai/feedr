@@ -29,4 +29,5 @@ class EventsController < ApplicationController
   def flash_message
     flash[:notice] = 'Your event has been added'
   end
+
 end
