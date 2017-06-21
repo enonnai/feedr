@@ -2,10 +2,15 @@
 <%= link_to 'Add your Event', new_event_path %><br>
 <br>
 
-<% if current_user %>
-  <%= form_with url: '/users/sign_out', method: "delete", local: true do |form| %>
-    <%= form.submit value: "Log out" %>
-  <% end %>
-<% else %>
- <%= link_to 'Log in', new_user_session_path %>
+<% @events.reverse.each do |event| %>
+  <%= event.title %>
+  <br>
+  <%= event.info %>
+  <br>
+  <%= event.date_time %>
+  <br>
+  <%= event.nr_guests %>
+  <br>
+  <br>
+  
 <% end %>
