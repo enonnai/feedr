@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
     @profile.save
-    redirect_to '/users/show'
+    redirect_to '/profiles/show'
   end
 
   private
