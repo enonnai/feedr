@@ -17,8 +17,8 @@ def create_event
 end
 
 def create_profile
-  fill_in "name", with: "Tester"
-  fill_in "location", with: "London"
-  fill_in "short_bio", with: "I like testing stuff"
+  fill_in "profile_name", with: "Tester"
+  fill_in "profile_location", with: "London"
+  fill_in "profile_short_bio", with: "I like testing stuff"
   click_button "Submit"
 end
