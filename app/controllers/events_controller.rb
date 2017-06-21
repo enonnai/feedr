@@ -17,7 +17,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    # redirect_to '/events/index'
+    redirect_to '/events/index'
   end
 
   private
