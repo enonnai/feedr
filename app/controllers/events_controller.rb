@@ -22,9 +22,6 @@ class EventsController < ApplicationController
     find_event
   end
 
-  def info
-  end 
-
   private
 
     def event_params

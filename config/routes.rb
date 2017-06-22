@@ -3,11 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'events#index'
-  resources :events do
-    collection do
-      get :info
-    end
-  end
+  resources :events
   resources :profiles
   resources :users do
     resources :profiles
