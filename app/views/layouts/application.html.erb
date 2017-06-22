@@ -12,12 +12,17 @@
 
   <body>
     <% if current_user %>
-      <%= form_with url: '/users/sign_out', method: "delete", local: true do |form| %>
-        <%= form.submit value: "Log out" %>
+      <% if current_user.profile %>
+          <%= link_to 'My Profile', profile_path(current_user.profile.id) %>
+      <% else %>
+          <%= link_to 'Create Profile', new_profile_path %>
       <% end %>
+        <%= form_with url: '/users/sign_out', method: "delete", local: true do |form| %>
+          <%= form.submit value: "Log out" %>
+        <% end %>
     <% else %>
      <%= link_to 'Log in', new_user_session_path %>
-    <% end %>
+     <% end %>
     <%= yield %>
   </body>
 </html>
