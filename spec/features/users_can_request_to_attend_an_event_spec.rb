@@ -6,6 +6,8 @@ RSpec.feature "Event Requests", type: :feature do
   scenario "users can request to attend an event" do
     visit "users/sign_up"
     sign_up
+    create_profile
+    click_button "Return to Events"
     click_link "Add your Event"
     create_event
     click_link "View Event"
