@@ -25,7 +25,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :info, :date_time, :nr_guests)
+    params.require(:event).permit(:title, :info, :date_time, :end_date_time, :nr_guests)
   end
 
   def flash_message
