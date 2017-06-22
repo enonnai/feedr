@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170622105311) do
+ActiveRecord::Schema.define(version: 20170622165930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170622105311) do
     t.string "info"
     t.string "date_time"
     t.integer "nr_guests"
+    t.string "host_name"
     t.string "end_date_time"
   end
 
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170622105311) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "name"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
