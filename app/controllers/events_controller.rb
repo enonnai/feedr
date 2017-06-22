@@ -13,6 +13,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
+    @event.host_name = user.name
     @event.save
     flash_message
     redirect_to '/events'
