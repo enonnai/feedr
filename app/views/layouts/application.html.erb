@@ -27,9 +27,9 @@
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
         <% if current_user.profile %>
-          <li><a href="<%= profile_path(current_user.profile.id)%>"<span class="glyphicon glyphicon-user"></span>My Profile</a></li>
+          <li><a href="<%= profile_path(current_user.profile.id)%>"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
         <% else %>
-          <li><a href="<%= new_profile_path %>"<span class="glyphicon glyphicon-user"></span>Create Profile</a></li>
+          <li><a href="<%= new_profile_path %>"><span class="glyphicon glyphicon-user"></span> Create Profile</a></li>
         <% end %>
         <li><a href="<%= destroy_user_session_path %>"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
       <% else %>
