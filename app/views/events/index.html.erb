@@ -13,6 +13,7 @@
     <% end %>
 <% else %>
  <%= link_to 'Log in', new_user_session_path %>
+ <% end %>
 
 <% @events.reverse.each do |event| %>
   <%= event.title %>
