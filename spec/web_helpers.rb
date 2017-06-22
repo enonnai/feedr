@@ -8,6 +8,14 @@ def sign_up(email = "test@example.com")
   click_button 'Sign up'
 end
 
+def sign_up_2(email = "test2@example.com")
+  visit '/users/sign_up'
+  fill_in 'user_email', with: email
+  fill_in 'user_password', with: "password2"
+  fill_in 'user_password_confirmation', with: "password2"
+  click_button 'Sign up'
+end
+
 def create_event
   fill_in "event_title", with: "Mexican dinner"
   fill_in "event_info", with: "Chilli con carne and margaritas for all. Sombreros and drinks welcome!"
