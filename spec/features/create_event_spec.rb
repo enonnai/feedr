@@ -15,6 +15,6 @@ RSpec.feature "Events", type: :feature do
     click_link 'Add your Event'
     click_button 'Submit'
     expect(current_path).to eq('/events/new')
-    expect(page).to have_content('Please fill in all fields')
+    expect(page).to have_content('Error: Please complete all fields')
   end
 end

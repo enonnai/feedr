@@ -13,12 +13,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
-    if @event.save
-      flash_message_good
-      redirect_to '/events'
-    else
-      flash_message_fail
-    end
+    @event.save ? flash_message_good : flash_message_fail
   end
 
   def show
@@ -33,9 +28,11 @@ class EventsController < ApplicationController
 
   def flash_message_good
     flash[:notice] = 'Your event has been added'
+    redirect_to '/events'
   end
 
   def flash_message_fail
-    flash[:notice] = 'Please fill in all fields'
+    flash[:notice] = 'Error: Please complete all fields'
+    redirect_to '/events/new'
   end
 end
