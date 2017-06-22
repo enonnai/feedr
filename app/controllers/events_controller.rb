@@ -22,6 +22,13 @@ class EventsController < ApplicationController
     redirect_to '/events/index'
   end
 
+  def display_event
+    redirect_to '/events/info'
+  end
+
+  def info
+  end 
+
   private
 
   def event_params
