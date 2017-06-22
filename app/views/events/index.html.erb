@@ -3,15 +3,15 @@
 <br>
 
 <% @events.reverse.each do |event| %>
-  <%= event.title %>
+  Title <%= event.title %>
   <br>
-  <%= event.info %>
+  Info <%= event.info %>
   <br>
-  <%= event.date_time %>
+  Starts at <%= event.date_time %>
   <br>
-  <%= event.end_date_time %>
+  Finishes at <%= event.end_date_time %>
   <br>
-  <%= event.nr_guests %>
+  Guests <%= event.nr_guests %>
   <br>
   <br>
 <% end %>
