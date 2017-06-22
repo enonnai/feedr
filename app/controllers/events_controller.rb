@@ -19,11 +19,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    redirect_to '/events/index'
-  end
-
-  def display_event
-    redirect_to '/events/info'
+    find_event
   end
 
   def info
@@ -31,12 +27,16 @@ class EventsController < ApplicationController
 
   private
 
-  def event_params
-    params.require(:event).permit(:title, :info, :date_time, :nr_guests)
-  end
+    def event_params
+      params.require(:event).permit(:title, :info, :date_time, :nr_guests)
+    end
 
-  def flash_message
-    flash[:notice] = 'Your event has been added'
-  end
+    def flash_message
+      flash[:notice] = 'Your event has been added'
+    end
+
+    def find_event
+      @event = Event.find(params[:id])
+    end
 
 end

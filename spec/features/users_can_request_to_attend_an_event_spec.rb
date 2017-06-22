@@ -14,8 +14,9 @@ RSpec.feature "Event Requests", type: :feature do
     click_link "Create Profile"
     create_profile
     click_button "View Event"
+    expect(page).to have_content("Chilli con carne and margaritas for all. Sombreros and drinks welcome!")
     click_button "RSVP"
-    expect(page).to have_content("Tester is attending this event")
+    expect(page).to have_content("Tester is attending Ben's Party event")
   end
 
 end
