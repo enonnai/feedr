@@ -15,3 +15,10 @@ def create_event
   fill_in "event_nr_guests", with: 6
   click_button "Submit"
 end
+
+def create_profile
+  fill_in "profile_name", with: "Tester"
+  fill_in "profile_location", with: "London"
+  fill_in "profile_short_bio", with: "I like testing stuff"
+  click_button "Submit"
+end
