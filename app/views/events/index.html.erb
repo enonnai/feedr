@@ -3,6 +3,8 @@
 <br>
 
 <% @events.reverse.each do |event| %>
+  <%= event.host_name %>
+  <br>
   <%= event.title %>
   <br>
   <%= event.info %>
@@ -11,6 +13,6 @@
   <br>
   <%= event.nr_guests %>
   <br>
-  <%= link_to "View Event", event_path(event) %> 
+  <%= link_to "View Event", event_path(event) %>
   <br>
 <% end %>
