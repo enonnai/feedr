@@ -1,8 +1,25 @@
+<!-- # <% if !user_signed_in? %>
+# <div class="jumbotron">
+# <h3>Welcome, new user!</h3>
+# <p class="lead">
+#   You must sign in or sign up before you can access our super sweet,
+#   top secret content.
+# </p>
+# <div class="row-fluid">
+#   <div class="span6">
+#     <%= link_to "Log In", new_user_session_path, :class => "btn btn-success" %>
+#   </div>
+#   <div class="span6">
+#     <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-success" %>
+#   </div>
+# </div>
+# <% end %>
+# </div> -->
 <h3>Check out Feedr's Latest Events:</h3>
-<%= link_to 'Add your Event', new_event_path %><br>
+<%= link_to 'Add your Event', new_event_path %>
 <br>
-
 <% @events.reverse.each do |event| %>
+<div class="jumbotron">
   Title <%= event.title %>
   <br>
   Info <%= event.info %>
