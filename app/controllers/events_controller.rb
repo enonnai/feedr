@@ -13,14 +13,19 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
+    @event.host_name = current_user.name
     @event.save ? flash_message_good : flash_message_fail
   end
 
   def show
-    redirect_to '/events/index'
+    find_event
   end
 
   private
+
+  def find_event
+    @event = Event.find(params[:id])
+  end
 
   def event_params
     params.require(:event).permit(:title, :info, :date_time, :end_date_time, :nr_guests)

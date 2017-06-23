@@ -2,9 +2,18 @@ require 'rails_helper'
 
 def sign_up(email = "test@example.com")
   visit '/users/sign_up'
+  fill_in 'user_name', with: "Santa Claus"
   fill_in 'user_email', with: email
   fill_in 'user_password', with: "password"
   fill_in 'user_password_confirmation', with: "password"
+  click_button 'Sign up'
+end
+
+def sign_up_2(email = "test2@example.com")
+  visit '/users/sign_up'
+  fill_in 'user_email', with: email
+  fill_in 'user_password', with: "password2"
+  fill_in 'user_password_confirmation', with: "password2"
   click_button 'Sign up'
 end
 
