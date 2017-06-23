@@ -18,4 +18,12 @@ RSpec.feature "Events", type: :feature do
     click_link "View Event"
     expect(page).to have_content("Chilli con carne and margaritas for all. Sombreros and drinks welcome!")
   end
+
+  scenario 'User must fill out all fields of form', type: :feature do
+    sign_up
+    click_link 'Add your Event'
+    click_button 'Submit'
+    expect(current_path).to eq('/events/new')
+    expect(page).to have_content('Error: Please complete all fields')
+  end
 end

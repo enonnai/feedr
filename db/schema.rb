@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20170622165930) do
     t.string "date_time"
     t.integer "nr_guests"
     t.string "host_name"
+    t.string "end_date_time"
   end
 
   create_table "profiles", force: :cascade do |t|

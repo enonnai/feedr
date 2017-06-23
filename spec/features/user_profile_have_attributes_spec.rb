@@ -21,7 +21,6 @@ RSpec.feature 'User profiles', type: :feature do
     sign_up
     click_link 'Create Profile'
     create_profile
-    click_button 'Return to Events'
     expect(page).to have_content "My Profile"
   end
 end
