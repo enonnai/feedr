@@ -1,0 +1,14 @@
+<br>
+<% if likeable.get_likes.size < likeable.nr_guests %>
+  <%= form_tag likes_path(likeable_type: likeable.class.to_s, likeable_id: likeable.id), remote: true do %>
+  <% button_tag class: 'button' do %>
+      I'm Going
+      <% end %>
+    <% end %>
+    <br>
+    <%= likeable.get_likes.size %> going<br>
+    <%= likeable.nr_guests - likeable.get_likes.size %> places left<br><br>
+    <% if likeable.nr_guests - likeable.get_likes.size == 0 %>
+    FULL HOUSE! Find another event to attend <a href="/events/">here</a>.
+      <% end %>
+<% end %>
