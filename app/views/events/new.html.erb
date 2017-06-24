@@ -6,9 +6,9 @@
   <%= a.label :info %> 
   <%= a.text_area :info %>   <br>
   <%= a.label :start_time %> 
-  <%= a.datetime_local_field :date_time %>   <br>
+  <%= a.datetime_local_field :date_time, min: Time.now, max: Time.now + (30 * 24 * 60 * 60) %>   <br>
   <%= a.label :end_time %> 
-  <%= a.datetime_local_field :end_date_time %>   <br>
+  <%= a.datetime_local_field :end_date_time, min: Time.now + (60 * 60), max: Time.now + (31 * 24 * 60 * 60) %>   <br>
   <%= a.label :max_guests %> 
   <%= a.number_field :nr_guests %>   <br>
   <%= a.submit "Submit", class: 'button' %>  
