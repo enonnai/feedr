@@ -11,7 +11,7 @@ RSpec.feature "Events", type: :feature do
     expect(page).to have_content("Tester 1")
   end
 
-  scenario "users can see the event description", type: :feature do
+  scenario "Users can see the event description", type: :feature do
     sign_up
     click_link "Add your Event"
     create_event
