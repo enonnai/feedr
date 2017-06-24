@@ -5,6 +5,7 @@ before_action :authenticate_user!
 
   def create
    @likeable.liked_by current_user
+   render json: {likes: @likeable.get_likes.count, places_left: @likeable.nr_guests - @likeable.get_likes.count, full_house: @likeable.nr_guests - @likeable.get_likes.count == 0}
  end
 
  private
