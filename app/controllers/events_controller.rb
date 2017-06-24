@@ -17,7 +17,7 @@ class EventsController < ApplicationController
     if @event.save
       flash_message_good
     else
-      flash[:notice] = @event.errors.full_messages
+      flash.now[:notice] = @event.errors.full_messages
       render :new
     end
   end
