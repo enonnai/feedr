@@ -13,9 +13,7 @@ RSpec.feature 'Attending Events', type: :feature do
     expect(page).to have_content("1 going")
     expect(page).to have_content("5 places left")
   end
-end
 
-RSpec.feature 'Attending Events', type: :feature do
   scenario 'User can see FULL HOUSE message if an event is full' do
     sign_up
     click_link "Add your Event"
