@@ -9,6 +9,10 @@
     <span id="going_count"><%= likeable.get_likes.count %> going</span><br>
     <span id="places_left"><%= likeable.nr_guests - likeable.get_likes.count %> places left</span><br><br>
     <% if likeable.nr_guests - likeable.get_likes.count == 0 %>
-    <span id="full_house">FULL HOUSE! Find another event to attend <a href="/events/">here</a>.</span>
+    <span id="full_house">FULL HOUSE! Find another event to attend <a href="/events/">here</a>.</span><br><br>
       <% end %>
 <% end %>
+Users going to this event:<br>
+<% likeable.get_likes.each do |goer| %>
+  <%= goer.voter.name %><br>
+ <% end %>

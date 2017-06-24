@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Feedr</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -37,19 +37,19 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
-          <% if current_user.profile %>
+            <% if current_user.profile %>
           <li>
             <a href="<%= profile_path(current_user.profile.id)%>">
               <span class="glyphicon glyphicon-user"></span>
               My Profile</a>
           </li>
-        <% else %>
+            <% else %>
           <li>
             <a href="<%= new_profile_path %>">
               <span class="glyphicon glyphicon-user"></span>
               Create Profile</a>
           </li>
-          <% end %>
+            <% end %>
           <li>
             <a href="<%= destroy_user_session_path %>">
               <span class="glyphicon glyphicon-log-out"></span>
@@ -66,7 +66,7 @@
               <span class="glyphicon glyphicon-log-in"></span>
               Log In</a>
           </li>
-          <% end %>
+        <% end %>
         </ul>
       </div>
     </nav>
