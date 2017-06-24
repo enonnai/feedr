@@ -1,0 +1,6 @@
+<br>
+  <%= form_tag like_path(likeable_type: likeable.class.to_s, likeable_id: likeable.id), remote: true do %>
+  <% button_tag class: 'button' do %>
+   I'm Going <%= likeable.get_likes.size %>
+  <% end %>
+<% end %>
