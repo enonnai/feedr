@@ -10,6 +10,6 @@
   <%= a.label :end_time %> 
   <%= a.datetime_local_field :end_date_time %>   <br>
   <%= a.label :max_guests %> 
-  <%= a.number_field :nr_guests %>   <br>
+  <%= a.number_field :nr_guests, min: 1, max: 99 %>   <br>
   <%= a.submit "Submit", class: 'button' %>  
 <% end %>
