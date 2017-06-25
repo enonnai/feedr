@@ -23,7 +23,7 @@ RSpec.feature "Events", type: :feature do
     sign_up
     click_link 'Add your Event'
     click_button 'Submit'
-    expect(current_path).to eq('/events/new')
-    expect(page).to have_content('Error: Please complete all fields')
+    expect(current_path).to eq('/events')
+    expect(page).to have_content("Title can't be blank")
   end
 end
