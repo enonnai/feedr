@@ -39,7 +39,6 @@ RSpec.feature 'Attending Events', type: :feature do
     click_button "I'm Going"
     visit '/events/'
     click_link "View Event"
-    save_and_open_page
     expect(page).not_to have_content("I'm Going")
   end
 
