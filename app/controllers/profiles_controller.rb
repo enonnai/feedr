@@ -8,8 +8,12 @@ before_action :authenticate_user!
   def create
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
-    @profile.save
+    if !@profile.save
+      flash.now[:notice] = @profile.errors.full_messages
+      render :new
+    else
     redirect_to profile_path(@profile)
+    end
   end
 
   def show

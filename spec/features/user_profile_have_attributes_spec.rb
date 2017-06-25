@@ -1,4 +1,3 @@
-require './app/models/user.rb'
 require 'rails_helper'
 require 'web_helpers'
 
@@ -22,5 +21,12 @@ RSpec.feature 'User profiles', type: :feature do
     click_link 'Create Profile'
     create_profile
     expect(page).to have_content "My Profile"
+  end
+
+  scenario 'Users cannot leave blank fields when filling in their profile' do
+    sign_up
+    click_link 'Create Profile'
+    click_button 'Submit'
+    expect(page).to have_content "can't be blank"
   end
 end
