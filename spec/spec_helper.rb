@@ -1,4 +1,3 @@
-require File.expand_path("../../config/environment", __FILE__)
 require 'capybara/rspec'
 require 'database_cleaner'
 

@@ -7,3 +7,5 @@
 <%= @event.date_time %>
 <br>
 <%= @event.nr_guests %>
+<br>
+<%= render partial: 'likes/form', locals: { likeable: @event } %>
