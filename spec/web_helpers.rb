@@ -37,8 +37,8 @@ end
 def create_event_2
   fill_in "event_title", with: "Mexican dinner"
   fill_in "event_info", with: "Chilli con carne and margaritas for all. Sombreros and drinks welcome!"
-  fill_in "event_date_time", with: "Friday at 8 PM"
-  fill_in "event_end_date_time", with: "Fridat at 12 AM"
+  fill_in "event_date_time", with: "30/07/17, 19:00"
+  fill_in "event_end_date_time", with: "30/07/17, 22:00"
   fill_in "event_nr_guests", with: 1
   click_button "Submit"
 end

@@ -20,6 +20,7 @@ RSpec.feature 'Attending Events', type: :feature do
     create_event_2
     click_link "Log Out"
     sign_up_2
+    click_link "Events"
     click_link "View Event"
     click_button "I'm Going"
     click_link "Log Out"
@@ -35,6 +36,8 @@ RSpec.feature 'Attending Events', type: :feature do
     create_event_2
     click_link "Log Out"
     sign_up_2
+    sleep 3
+    click_link "Events"
     click_link "View Event"
     click_button "I'm Going"
     expect(page).to have_content("Tester 1")
