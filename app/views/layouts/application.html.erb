@@ -73,7 +73,17 @@
     </nav>
 
     <div class="container">
-      <p class="notice"><%= notice %></p>
+      <% if flash[:notice] %>
+        <% if flash[:notice].is_a? Array %>
+        <ul id='errors'>
+          <% flash[:notice].each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+         <% else %>
+           <%= flash[:notice] %>
+        </ul>
+         <% end %>
+      <% end %>
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>

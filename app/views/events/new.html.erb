@@ -1,5 +1,4 @@
 <h1>Create your Event</h1>
-
 <div class='container'>
   <%= form_for @event, :html => {:class => "form-horizontal center"} do |a| %>
 
@@ -21,21 +20,21 @@
     <%= a.label :event_start_time, class: "col-md-2 control-label" %> 
     <div class="col-md-10">
     <p><i> Set a start date and time. Events can only be created up to 30 days in advance. </i></p>
-    <%= a.datetime_local_field :date_time, class: "form-control" %> 
+    <%= a.datetime_local_field :date_time, class: "form-control", min: Time.now, max: Time.now + (30 * 24 * 60 * 60) %> 
     </div>
   </div>
   <div class="form-group">
     <%= a.label :event_end_time, class: "col-md-2 control-label" %> 
     <div class="col-md-10">
     <p><i> Set a finish date and time for your event. </i></p>
-    <%= a.datetime_local_field :end_date_time, class: "form-control" %> 
+    <%= a.datetime_local_field :end_date_time, class: "form-control", min: Time.now + (60 * 60), max: Time.now + (31 * 24 * 60 * 60) %> 
     </div>
   </div>
   <div class="form-group">
     <%= a.label :guests, class: "col-md-2 control-label" %> 
     <div class="col-md-10">
     <p><i> How many guests can come to your event? </i></p>
-    <%= a.number_field :nr_guests, class: "form-control" %> 
+    <%= a.number_field :nr_guests, class: "form-control", min: 1, max: 99 %> 
     </div>
   </div>
     <div class="col-sm-2"></div>
