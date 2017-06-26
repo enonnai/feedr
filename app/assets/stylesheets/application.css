@@ -1,5 +1,6 @@
 .navbar-inverse{
-  background-color: #90EE90;
+  background-color: #6CB33F;
+  color: white;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
@@ -19,8 +20,9 @@
 a.navbar-brand {
   font-weight: bold;
 }
+
 .navbar-brand :hover,{
-  color: #ecf0f1;
+  color: white;
 }
 
 .navbar-inverse {
