@@ -1,8 +1,9 @@
 <h3>Check out Feedr's Latest Events:</h3>
-<%= link_to 'Add your Event', new_event_path %><br>
+<%= link_to 'Add your Event', new_event_path %>
 <br>
-
 <% @events.reverse.each do |event| %>
+  Host <%= event.host_name %>
+  <br>
   Title <%= event.title %>
   <br>
   Info <%= event.info %>
@@ -13,5 +14,6 @@
   <br>
   Guests <%= event.nr_guests %>
   <br>
+  <%= link_to "View Event", event_path(event) %>
   <br>
 <% end %>

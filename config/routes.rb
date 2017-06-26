@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :users do
     resources :profiles
   end
+  match :like, to: 'likes#create', as: :likes, via: [:get, :post]
 end

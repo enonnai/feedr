@@ -8,6 +8,15 @@ RSpec.feature "Events", type: :feature do
     click_link 'Add your Event'
     create_event
     expect(page).to have_content("Your event has been added")
+    expect(page).to have_content("Tester 1")
+  end
+
+  scenario "Users can see the event description", type: :feature do
+    sign_up
+    click_link "Add your Event"
+    create_event
+    click_link "View Event"
+    expect(page).to have_content("Chilli con carne and margaritas for all. Sombreros and drinks welcome!")
   end
 
   scenario 'User must fill out all fields of form', type: :feature do
