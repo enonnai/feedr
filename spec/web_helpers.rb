@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 def sign_up(email = "test@example.com")
-  visit '/users/sign_up'
+  click_on "Sign Up"
   fill_in 'user_name', with: "Tester 1"
   fill_in 'user_email', with: email
   fill_in 'user_password', with: "password"
@@ -10,7 +10,8 @@ def sign_up(email = "test@example.com")
 end
 
 def sign_up_2(email = "test2@example.com")
-  click_link 'Sign Up'
+  click_on "Sign Up"
+  sleep 2
   fill_in 'user_name', with: "Tester 2"
   fill_in 'user_email', with: email
   fill_in 'user_password', with: "password2"

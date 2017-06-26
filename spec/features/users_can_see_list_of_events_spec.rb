@@ -5,6 +5,7 @@ require 'web_helpers'
 RSpec.feature "Events Page", type: :feature do
 
   scenario "users can see a list of events" do
+    visit '/'
     sign_up
     click_link 'Add your Event'
     create_event

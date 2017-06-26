@@ -1,8 +1,7 @@
 <br>
 <% if likeable.get_likes.count < likeable.nr_guests %>
   <%= form_tag likes_path(likeable_type: likeable.class.to_s, likeable_id: likeable.id), id: "im_going", remote: true do %>
-    <% button_tag class: 'button' do %>
-      I'm Going
+    <% button_tag class: 'button', id: 'going_button' do %>I'm Going
     <% end %>
   <% end %>
 <% end %>
@@ -16,9 +15,9 @@
 Users going to this event:<br>
 <% likeable.get_likes.each do |goer| %>
   <% if goer.voter.profile %>
-    <%= link_to goer.voter.name, profile_path(goer.voter.profile) %>
+    <span id="going_name_profile"><%= link_to goer.voter.name, profile_path(goer.voter.profile) %></span>
   <% else %>
-    <%= goer.voter.name %>
+    <span id="going_name"><%= goer.voter.name %></span>
   <% end %>
   <br />
 <% end %>
