@@ -2,15 +2,15 @@
 <br>
 <div class="form-group">
   <%= label :name, "Name:", class: "col-md-4 control-label" %>
-  <%= current_user.profile.name %>
+  <%= @profile.name %>
 </div>
 <div class="form-group">
   <%= label :location, "Location:", class: "col-md-4 control-label" %>
-  <%= current_user.profile.location %>
+  <%= @profile.location %>
 </div>
 <div class="form-group">
   <%= label :bio, "Bio:", class: "col-md-4 control-label" %>
-  <%= current_user.profile.short_bio %>
+  <%= @profile.short_bio %>
 </div>
 <br>
 <%= link_to "Return to Events", root_path, class: "btn btn-default btn-primary" %>
