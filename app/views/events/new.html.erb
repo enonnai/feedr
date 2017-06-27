@@ -9,6 +9,13 @@
     </div>
   </div>
   <div class="form-group">
+    <%= a.label :location, class: "col-md-2 control-label" %> 
+    <div class="col-md-10">
+    <p><i> Where is your event being held? </i></p>
+    <%= a.text_field :address, class: "form-control" %> 
+    </div>
+  </div>
+  <div class="form-group">
     <%= a.label :event_info, class: "col-md-2 control-label" %> 
     <div class="col-md-10">
     <p><i> Add some information. Tell people about a theme or put your menu here. </i></p>
