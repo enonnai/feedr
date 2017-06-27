@@ -1,5 +1,5 @@
 <h1>Create your Profile</h1>
-
+<div class='container'>
 <% if current_user %>
 <%= form_for @profile, :html => {:class => "form-horizontal center"} do |form| %>
 <div class="form-group">
@@ -25,3 +25,4 @@
 <%= form.submit "Submit", class: "btn col-md-10 btn-primary" %>
 <% end %>
 <%end %>
+</div>

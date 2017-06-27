@@ -4,6 +4,7 @@ require 'web_helpers'
 RSpec.feature "Events", type: :feature do
 
   scenario "User can add their event", type: :feature do
+    visit '/'
     sign_up
     click_link 'Add your Event'
     create_event
@@ -12,6 +13,7 @@ RSpec.feature "Events", type: :feature do
   end
 
   scenario "Users can see the event description", type: :feature do
+    visit '/'
     sign_up
     click_link "Add your Event"
     create_event
@@ -20,10 +22,11 @@ RSpec.feature "Events", type: :feature do
   end
 
   scenario 'User must fill out all fields of form', type: :feature do
+    visit '/'
     sign_up
     click_link 'Add your Event'
     click_button 'Submit'
-    expect(current_path).to eq('/events/new')
-    expect(page).to have_content('Error: Please complete all fields')
+    expect(current_path).to eq('/events')
+    expect(page).to have_content("Title can't be blank")
   end
 end

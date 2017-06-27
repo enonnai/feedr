@@ -4,12 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="app/assets/images/favicon.ico" type="image/x-icon" />
+     <!-- <link rel="shortcut icon" href="/app/assets/images/favicon.ico" type="image/x-icon" /> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>feedr</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -53,19 +50,16 @@
             <% end %>
           <li>
             <a href="<%= destroy_user_session_path %>">
-              <span class="glyphicon glyphicon-log-out"></span>
-              Log Out</a>
+              <span class="glyphicon glyphicon-log-out"></span>Log Out</a>
           </li>
         <% else %>
           <li>
             <a href="/users/sign_up">
-              <span class="glyphicon glyphicon-user"></span>
-              Sign Up</a>
+              <span title="Sign Up" class="glyphicon glyphicon-user"></span>Sign Up</a>
           </li>
           <li>
             <a href="<%= new_user_session_path %>">
-              <span class="glyphicon glyphicon-log-in"></span>
-              Log In</a>
+              <span class="glyphicon glyphicon-log-in"></span>Log In</a>
           </li>
         <% end %>
         </ul>
