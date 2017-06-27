@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170627143656) do
     t.integer "nr_guests"
     t.string "end_date_time"
     t.string "host_name"
+    t.integer "rating"
     t.string "event_picture_file_name"
     t.string "event_picture_content_type"
     t.integer "event_picture_file_size"
@@ -39,6 +40,15 @@ ActiveRecord::Schema.define(version: 20170627143656) do
     t.string "short_bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "CreateRatings"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_ratings_on_event_id"
   end
 
   create_table "users", force: :cascade do |t|
