@@ -1,19 +1,21 @@
-<h3>Check out Feedr's Latest Events:</h3>
-<%= link_to 'Add your Event', new_event_path %>
+<h3>Check out feedr's Latest Events:</h3> <br>
+<%= link_to 'Add your Event', new_event_path, class: "btn col-md-12 btn-primary" %>
 <br>
-<% @events.reverse.each do |event| %>
-  Host <%= event.host_name %>
-  <br>
-  Title <%= event.title %>
-  <br>
-  Info <%= event.info %>
-  <br>
-  Starts at <%= event.date_time %>
-  <br>
-  Finishes at <%= event.end_date_time %>
-  <br>
-  Guests <%= event.nr_guests %>
-  <br>
-  <%= link_to "View Event", event_path(event) %>
-  <br>
-<% end %>
+<br>
+<br>
+
+  <% @events.reverse.each do |event| %>
+  <div class="container thumbnail col-md-6">
+    <img src="https://www.gentlemansgazette.com/wp-content/uploads/2013/12/Dinner-Party-Hors-dOeuvres.jpg">
+    <div class="caption">
+      <h3><%= event.title %></h3>
+      <br>
+      <strong>Starting: </strong><%= event.date_time %>
+      <br>
+      <br>
+      <%= link_to "View Event", event_path(event), class: "btn col-md-12 btn-primary" %>
+      <br><br>
+    </div>
+
+  </div>
+  <% end %>

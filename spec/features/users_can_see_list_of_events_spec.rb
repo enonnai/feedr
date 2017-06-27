@@ -9,7 +9,7 @@ RSpec.feature "Events Page", type: :feature do
     sign_up
     click_link 'Add your Event'
     create_event
-    expect(page).to have_content("Chilli con carne and margaritas for all. Sombreros and drinks welcome!")
+    expect(page).to have_content("Mexican dinner")
   end
 
 end
