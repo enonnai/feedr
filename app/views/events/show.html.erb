@@ -1,20 +1,22 @@
 <h1><%= @event.title %></h1>
-<div class="container">
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">About this event:</div>
-      <div class="panel-body"> <%= @event.info %><br>
-        Host: <%= @event.host_name %><br>
-        Event starts: <%= DateTime.parse(@event.date_time).strftime("%d/%m/%Y at %R")%><br>
-        Event ends: <%= DateTime.parse(@event.end_date_time).strftime("%d/%m/%Y at %R")%><br>
-        <div id='latitude'><%= @event.latitude %></div>
-        <div id='longitude'><%= @event.longitude %></div>
-        <%= render partial: 'likes/form', locals: { likeable: @event } %>
-      </div>
-    </div>
+<div class="container col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">About this event</div>
+    <div class="panel-body"><%= @event.info %></div>
+    <div class="panel-heading">Hosted by</div>
+    <div class="panel-body"><%= @event.host_name %></div>
+    <div class="panel-heading">Where is it?</div>
+    <div class="panel-body"><%= @event.address %></div>
+    <div class="panel-heading">Event begins</div>
+    <div class="panel-body"><%= DateTime.parse(@event.date_time).strftime("%d/%m/%Y at %R")%></div>
+    <div class="panel-heading">Event ends</div>
+    <div class="panel-body"><%= DateTime.parse(@event.end_date_time).strftime("%d/%m/%Y at %R")%></div>
   </div>
+    <%= render partial: 'likes/form', locals: { likeable: @event } %>
+    <br>
+</div>
 
-  <div class="col-md-6", id="map">
+<div class="col-md-6" id="map" style="height: 435px">
   <script>
     function initMap() {
       var latitude = Number(document.getElementById('latitude').innerHTML)
@@ -33,12 +35,9 @@
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY3o7mGPlAyjeyr1L3pLBROlFd2v75hM8&callback=initMap">
   </script>
-  </div>
+  <div id='latitude'><%= @event.latitude %></div>
+  <div id='longitude'><%= @event.longitude %></div>
 </div>
 <br>
-<style>
-  #map {
-    height: 400px;
-    width: 100%;
-   }
-</style>
+<br>
+<br>
