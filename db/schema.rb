@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627105000) do
+ActiveRecord::Schema.define(version: 20170627143656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20170627105000) do
     t.string "event_picture_content_type"
     t.integer "event_picture_file_size"
     t.datetime "event_picture_updated_at"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
   end
 
   create_table "profiles", force: :cascade do |t|
