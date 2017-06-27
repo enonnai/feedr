@@ -8,5 +8,4 @@ RSpec.describe EventsController, type: :controller do
       expect(response.status).to eq(200)
     end
   end
-
 end

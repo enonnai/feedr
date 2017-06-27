@@ -1,3 +1,4 @@
+
 <%= @event.host_name %>
 <br>
 <%= @event.title %>
@@ -9,3 +10,32 @@
 <%= @event.nr_guests %>
 <br>
 <%= render partial: 'likes/form', locals: { likeable: @event } %>
+
+<div id='latitude'><%= @event.latitude %></div>
+<div id='longitude'><%= @event.longitude %></div>
+
+<style>
+  #map {
+    height: 400px;
+    width: 100%;
+   }
+</style>
+<div id="map"></div>
+<script>
+  function initMap() {
+    var latitude = Number(document.getElementById('latitude').innerHTML)
+    var longitude = Number(document.getElementById('longitude').innerHTML)
+    var user_event = {lat: latitude, lng: longitude};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 13,
+      center: user_event
+    });
+    var marker = new google.maps.Marker({
+      position: user_event,
+      map: map
+    });
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY3o7mGPlAyjeyr1L3pLBROlFd2v75hM8&callback=initMap">
+</script>
