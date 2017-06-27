@@ -16,7 +16,7 @@
     <br>
 </div>
 
-<div class="col-md-6" id="map" style="height: 435px">
+<div class="col-md-6" id="map" style="height: 500px">
   <script>
     function initMap() {
       var latitude = Number(document.getElementById('latitude').innerHTML)
@@ -38,6 +38,8 @@
   <div id='latitude'><%= @event.latitude %></div>
   <div id='longitude'><%= @event.longitude %></div>
 </div>
+<br>
+<%= link_to "Back to Events", '/events', class: "btn col-md-12 btn-primary" %>
 <br>
 <br>
 <br>
