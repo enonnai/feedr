@@ -36,6 +36,13 @@
     <%= a.number_field :nr_guests, class: "form-control", min: 1, max: 99 %> 
     </div>
   </div>
+  <div class="form-group">
+    <%= a.label :event_picture, class: "col-md-2 control-label" %> 
+    <div class="col-md-10">
+    <p><i> Upload your event picture: </i></p>
+    <%= a.file_field :event_picture, class: "form-control" %> 
+    </div>
+  </div>
     <div class="col-sm-2"></div>
     <%= a.submit "Submit", class: "btn col-md-10 btn-primary" %>  
   <% end %>
