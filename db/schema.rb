@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623150046) do
+ActiveRecord::Schema.define(version: 20170627105000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 20170623150046) do
     t.integer "nr_guests"
     t.string "end_date_time"
     t.string "host_name"
+    t.string "event_picture_file_name"
+    t.string "event_picture_content_type"
+    t.integer "event_picture_file_size"
+    t.datetime "event_picture_updated_at"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -34,16 +38,12 @@ ActiveRecord::Schema.define(version: 20170623150046) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rating_caches", force: :cascade do |t|
-    t.string "cacheable_type"
-    t.bigint "cacheable_id"
-    t.float "avg", null: false
-    t.integer "qty", null: false
-    t.string "dimension"
+  create_table "ratings", force: :cascade do |t|
+    t.integer "rating"
+    t.integer "user_id"
+    t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
-    t.index ["cacheable_type", "cacheable_id"], name: "index_rating_caches_on_cacheable_type_and_cacheable_id"
   end
 
   create_table "users", force: :cascade do |t|
