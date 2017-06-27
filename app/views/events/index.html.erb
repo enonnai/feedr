@@ -8,19 +8,12 @@
   <div class="container thumbnail col-md-6">
     <img src="https://www.gentlemansgazette.com/wp-content/uploads/2013/12/Dinner-Party-Hors-dOeuvres.jpg">
     <div class="caption">
-      Host <%= event.host_name %>
+      <h3><%= event.title %></h3>
       <br>
-      Title <%= event.title %>
+      <strong>Starting: </strong><%= event.date_time %>
       <br>
-      Info <%= event.info %>
       <br>
-      Starts at <%= event.date_time %>
-      <br>
-      Finishes at <%= event.end_date_time %>
-      <br>
-      Guests <%= event.nr_guests %>
-      <br>
-      <%= link_to "View Event", event_path(event) %>
+      <%= link_to "View Event", event_path(event), class: "btn col-md-12 btn-primary" %>
       <br><br>
     </div>
 
