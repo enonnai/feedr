@@ -9,12 +9,18 @@
     <img src="<%= event.event_picture %>" class="img-responsive", style="height:250px">
     <div class="caption" style="text-align: center;">
       <h3><%= event.title %></h3>
+      <hr>
+      <% t = event.date_time %>
+      <strong>Date: </strong><%= event.date_time.to_time.strftime("%A, %e %B %Y ") %>
       <br>
-      <strong>When: </strong><%= event.date_time.strftime ("%B") %>
+      <strong>Time: </strong><%= event.date_time.to_time.strftime("%l:%M ") %>
+      <br>
+      <strong>Where: </strong><%= event.address %>
       <br>
       <br>
-      <%= link_to "View Event", event_path(event), class: "btn col-md-12 btn-primary" %>
-      <br><br>
+      <%= link_to "View Event", event_path(event), class: "btn col-md-12 btn-primary"%>
+      <br>
+      <br>
     </div>
 
   </div>
