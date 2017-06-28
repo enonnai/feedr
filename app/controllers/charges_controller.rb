@@ -8,7 +8,7 @@ class ChargesController < ApplicationController
 
   def create
     @amount = params[:amount]
-    @amount = @amount.gsub('$', '').gsub(',', '')
+    @amount = @amount.gsub('£', '').gsub(',', '')
 
     begin
     @amount = Float(@amount).round(2)
@@ -29,7 +29,7 @@ class ChargesController < ApplicationController
   Stripe::Charge.create(
     :amount => @amount,
     :currency => 'gbp',
-    :source => params[:stripeToken],
+    :source => 'tok_gb',
     :description => 'Custom donation'
   )
 
