@@ -14,7 +14,41 @@
   <button id='donateButton'>Donate</button>
 <% end %>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-locale="auto"></script>
-<% end %>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<script>
+var handler = StripeCheckout.configure({
+key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+locale: 'auto',
+name: 'Feedr',
+description: 'One-time donation',
+token: function(token) {
+  $('input#stripeToken').val(token.id);
+  $('form').submit();
+}
+});
+
+$('#donateButton').on('click', function(e) {
+  e.preventDefault();
+
+  $('#error_explanation').html('');
+
+  var amount = $('input#amount').val();
+  amount = amount.replace(/\$/g, '').replace(/\,/g, '')
+
+  amount = parseFloat(amount);
+
+  if (isNaN(amount)) {
+    $('#error_explanation').html('<p>Please enter a valid amount in GBP (£).</p>');
+  }
+  else if (amount < 0.01) {
+    $('#error_explanation').html('<p>Donation amount must be at least £0.01.</p>');
+  }
+  else {
+    amount = amount * 100;
+    handler.open({
+      amount: Math.round(amount)
+    })
+  }
+});
+</script>
