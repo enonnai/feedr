@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20170627143656) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer "event_id"
-    t.integer "CreateRatings"
+    t.integer "rating"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
