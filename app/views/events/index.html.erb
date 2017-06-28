@@ -10,7 +10,20 @@
     <div class="caption">
       <h3><%= event.title %></h3>
       <br>
-      <strong>Starts: </strong><%= DateTime.parse(event.date_time).strftime("%d/%m/%Y at %R") %>
+      <% if current_user %>
+        <% if current_user.profile %>
+        <% response = HTTParty.get("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=#{current_user.profile.location}&destinations=#{event.address}&key=AIzaSyDnpY7hqQMSItvfLul9dC251c8ednf5hos") %>
+        <% json = JSON.parse(response.body) %>
+        <% dist = json['rows'][0]['elements'][0]['distance']['text'] %>
+        <strong>Distance:</strong> <%=dist%>les
+        <% else %>
+        Create a Profile to see how far you are from this event!
+        <% end %>
+      <% else %>
+      Sign up to see how far you are from this event!
+      <% end %>
+      <br>
+      <strong>Starts</strong> on <%= DateTime.parse(event.date_time).strftime("%d/%m/%Y at %R") %>
       <br>
       <br>
       <%= link_to "View Event", event_path(event), class: "btn col-md-12 btn-primary" %>
