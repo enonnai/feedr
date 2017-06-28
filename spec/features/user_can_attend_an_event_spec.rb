@@ -1,16 +1,16 @@
 require 'rails_helper'
 require 'web_helpers'
 
-RSpec.feature 'Attending Events', type: :feature do
-  scenario 'User can assign themselves to an event', js: true do
+describe 'Attending Events', type: :feature do
+  it 'User can assign themselves to an event', js: true do
     visit '/'
     sign_up
     click_link "Add your Event"
     create_event
     click_link "Log Out"
-    sleep 3
     sign_up_2
     click_link "View Event"
+    sleep 1
     click_button "I'm Going"
     find('#going_count').should have_content '1 going'
     find('#places_left').should have_content '5 places left'
@@ -22,10 +22,10 @@ RSpec.feature 'Attending Events', type: :feature do
     click_link "Add your Event"
     create_event_with_one_guest
     click_link "Log Out"
-    sleep 3
     sign_up_2
     click_link "Events"
     click_link "View Event"
+    sleep 1
     click_button "I'm Going"
     click_link "Events"
     click_link "View Event"
@@ -38,10 +38,10 @@ RSpec.feature 'Attending Events', type: :feature do
     click_link "Add your Event"
     create_event_with_one_guest
     click_link "Log Out"
-    sleep 5
     sign_up_2
     click_link "Events"
     click_link "View Event"
+    sleep 1
     click_button "I'm Going"
     click_link "Events"
     click_link "View Event"
@@ -54,10 +54,10 @@ RSpec.feature 'Attending Events', type: :feature do
     click_link "Add your Event"
     create_event_with_one_guest
     click_link "Log Out"
-    sleep 3
     sign_up_2
     click_link "Events"
     click_link "View Event"
+    sleep 1
     click_button "I'm Going"
     find('#going_name').should have_content("Tester 2")
   end

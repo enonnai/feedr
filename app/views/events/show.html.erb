@@ -1,42 +1,45 @@
+<h1><%= @event.title %></h1>
+<div class="container col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">About this event</div>
+    <div class="panel-body"><%= @event.info %></div>
+    <div class="panel-heading">Hosted by</div>
+    <div class="panel-body"><%= @event.host_name %></div>
+    <div class="panel-heading">Where is it?</div>
+    <div class="panel-body"><%= @event.address %></div>
+    <div class="panel-heading">Event begins</div>
+    <div class="panel-body"><%= DateTime.parse(@event.date_time).strftime("%d/%m/%Y at %R")%></div>
+    <div class="panel-heading">Event ends</div>
+    <div class="panel-body"><%= DateTime.parse(@event.end_date_time).strftime("%d/%m/%Y at %R")%></div>
+  </div>
+    <%= render partial: 'likes/form', locals: { likeable: @event } %>
+    <br>
+</div>
 
-<%= @event.host_name %>
+<div class="col-md-6" id="map" style="height: 500px">
+  <script>
+    function initMap() {
+      var latitude = Number(document.getElementById('latitude').innerHTML)
+      var longitude = Number(document.getElementById('longitude').innerHTML)
+      var user_event = {lat: latitude, lng: longitude};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: user_event
+      });
+      var marker = new google.maps.Marker({
+        position: user_event,
+        map: map
+      });
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY3o7mGPlAyjeyr1L3pLBROlFd2v75hM8&callback=initMap">
+  </script>
+  <div id='latitude'><%= @event.latitude %></div>
+  <div id='longitude'><%= @event.longitude %></div>
+</div>
 <br>
-<%= @event.title %>
+<%= link_to "Back to Events", '/events', class: "btn col-md-12 btn-primary" %>
 <br>
-<%= @event.info %>
 <br>
-<%= @event.date_time %>
 <br>
-<%= @event.nr_guests %>
-<br>
-<%= render partial: 'likes/form', locals: { likeable: @event } %>
-<%= link_to 'Make a donation', new_charge_path, class: "btn col-md-12 btn-primary" %>
-
-<div id='latitude'><%= @event.latitude %></div>
-<div id='longitude'><%= @event.longitude %></div>
-
-<style>
-  #map {
-    height: 400px;
-    width: 100%;
-   }
-</style>
-<div id="map"></div>
-<script>
-  function initMap() {
-    var latitude = Number(document.getElementById('latitude').innerHTML)
-    var longitude = Number(document.getElementById('longitude').innerHTML)
-    var user_event = {lat: latitude, lng: longitude};
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 13,
-      center: user_event
-    });
-    var marker = new google.maps.Marker({
-      position: user_event,
-      map: map
-    });
-  }
-</script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY3o7mGPlAyjeyr1L3pLBROlFd2v75hM8&callback=initMap">
-</script>

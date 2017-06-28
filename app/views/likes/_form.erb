@@ -1,23 +1,33 @@
-<br>
 <% if likeable.get_likes.count < likeable.nr_guests %>
-  <%= form_tag likes_path(likeable_type: likeable.class.to_s, likeable_id: likeable.id), id: "im_going", remote: true do %>
-    <% button_tag class: 'button', id: 'going_button' do %>I'm Going
-    <% end %>
+  <%= form_with url: likes_path(likeable_type: likeable.class.to_s, likeable_id: likeable.id), id: "im_going", remote: true do |form| %>
+    <% form.submit class: 'button', id: 'going_button', value: "I'm Going" %>
   <% end %>
 <% end %>
   <br>
   <% if likeable.nr_guests == likeable.get_likes.count %>
     <span id="full_house">FULL HOUSE! Find another event to attend <a href="/events/">here</a>.</span><br><br>
   <% else %>
-    <span id="going_count"><%= likeable.get_likes.count %> going</span><br>
+    <span id="going_count"><%= likeable.get_likes.count %> going</span>
     <span id="places_left"><%= likeable.nr_guests - likeable.get_likes.count %> places left</span><br><br>
   <% end %>
-Users going to this event:<br>
-<% likeable.get_likes.each do |goer| %>
-  <% if goer.voter.profile %>
-    <span id="going_name_profile"><%= link_to goer.voter.name, profile_path(goer.voter.profile) %></span>
-  <% else %>
-    <span id="going_name"><%= goer.voter.name %></span>
+<div class="panel panel-default">
+<div class="panel-heading">Who's attending this event</div>
+  <div class="panel-body"><% likeable.get_likes.each do |goer| %>
+    <% if goer.voter.profile %>
+      <span id="going_name_profile"><%= link_to goer.voter.name, profile_path(goer.voter.profile) %></span>
+    <% else %>
+      <span id="going_name"><%= goer.voter.name %></span>
+    <% end %>
+    <br />
   <% end %>
-  <br />
-<% end %>
+  </div>
+</div>
+
+<style>
+  #going_count {
+    float: left;
+  }
+  #places_left {
+    float: right
+  }
+</style>
