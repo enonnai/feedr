@@ -39,6 +39,11 @@
   <div id='longitude'><%= @event.longitude %></div>
 </div>
 <br>
+<% if current_user && @event.end_date_time < Time.now %> 
+  <%= link_to 'Make a donation', new_charge_path, class: "btn col-md-12 btn-primary" %>
+ <% end %>
+<br>
+<br>
 <%= link_to "Back to Events", '/events', class: "btn col-md-12 btn-primary" %>
 <br>
 <br>

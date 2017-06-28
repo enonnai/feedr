@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170627143656) do
     t.integer "nr_guests"
     t.string "end_date_time"
     t.string "host_name"
+    t.integer "rating"
     t.string "event_picture_file_name"
     t.string "event_picture_content_type"
     t.integer "event_picture_file_size"

@@ -1,6 +1,6 @@
 <% if likeable.get_likes.count < likeable.nr_guests %>
   <%= form_with url: likes_path(likeable_type: likeable.class.to_s, likeable_id: likeable.id), id: "im_going", remote: true do |form| %>
-    <% form.submit class: 'button', id: 'going_button', value: "I'm Going" %>
+    <% form.submit class: 'button', id: 'going_button', value: "I'm Going", class: "btn col-md-12 btn-primary" %>
   <% end %>
 <% end %>
   <br>
