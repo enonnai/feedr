@@ -1,12 +1,13 @@
-<h3>Check out feedr's Latest Events:</h3> <br>
-<%= link_to 'Add your Event', new_event_path, class: "btn btn-primary col-md-12 col-sm-12 col-xs-12" %>
+<h1>Events</h1> <br>
+<%= link_to ' Add your Event', new_event_path, class: "btn btn-lg btn-primary col-lg-12 col-md-12 col-sm-12 col-xs-12" %>
+<br>
 <br>
 <br>
 <br>
 
   <% @events.reverse.each do |event| %>
   <div class="col-md-6">
-    <div class="container thumbnail col-md-10 col-md-offset-1">
+    <div class="container thumbnail col-md-10 col-sm-11 col-md-offset-1">
       <img src="<%= event.event_picture %>" class="img-responsive", style="height:250px">
       <div class="caption" style="text-align: center;">
         <h3><%= event.title %></h3>
@@ -19,7 +20,7 @@
         <strong>Where: </strong><%= event.address %>
         <br>
         <br>
-        <%= link_to "View Event", event_path(event), class: "btn col-md-12 btn-primary"%>
+        <%= link_to "View Event", event_path(event), class: "btn col-md-12 col-xs-12 btn-primary"%>
         <br>
         <br>
       </div>
