@@ -5,16 +5,18 @@
 <br>
 
   <% @events.reverse.each do |event| %>
-  <%= user_origin = current_user.profile.location %>
-  <%= event_destination = event.address %>
-  <% p user_origin %>
-  <% distance = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=#{current_user.profile.location}&destinations=#{event.address}&key=AIzaSyDnpY7hqQMSItvfLul9dC251c8ednf5hos" %>
+  <% if current_user.profile  %>
+  <% response = HTTParty.get("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=#{current_user.profile.location}&destinations=#{event.address}&key=AIzaSyDnpY7hqQMSItvfLul9dC251c8ednf5hos") %>
+  <% json = JSON.parse(response.body) %>
+  <%= dist = json['rows'] %>
+
+  <% end %>
   <div class="container thumbnail col-md-6">
     <img src="<%= event.event_picture %>" class="img-responsive", height="375">
     <div class="caption">
       <h3><%= event.title %></h3>
       <br>
-      <strong>Distance: <%= distance.rows.elements.distance.text %></strong>
+      <strong>Distance:</strong>
       <br>
       <strong>Starts: </strong><%= DateTime.parse(event.date_time).strftime("%d/%m/%Y at %R") %>
       <br>

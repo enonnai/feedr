@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'geocoder'
+gem 'httparty'
 
 group :test do
   gem 'database_cleaner'
