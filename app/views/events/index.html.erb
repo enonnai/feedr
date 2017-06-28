@@ -12,7 +12,7 @@
       <br>
       <% if current_user %>
         <% if current_user.profile %>
-        <% response = HTTParty.get("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=#{current_user.profile.location}&destinations=#{event.address}&key=AIzaSyDnpY7hqQMSItvfLul9dC251c8ednf5hos") %>
+        <% response = HTTParty.get("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=#{current_user.profile.location}&destinations=#{event.address}&key=#{ENV["API_KEY"]}") %>
         <% json = JSON.parse(response.body) %>
         <% dist = json['rows'][0]['elements'][0]['distance']['text'] %>
         <strong>Distance:</strong> <%=dist%>les

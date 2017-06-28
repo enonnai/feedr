@@ -13,6 +13,7 @@ gem 'selenium-webdriver'
 gem "paperclip", "~> 5.0.0"
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
+gem 'dotenv-rails', groups: [:development, :test]
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
