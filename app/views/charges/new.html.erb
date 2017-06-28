@@ -51,4 +51,7 @@ $('#donateButton').on('click', function(e) {
     })
   }
 });
+$(window).on('popstate', function() {
+  handler.close();
+});
 </script>
