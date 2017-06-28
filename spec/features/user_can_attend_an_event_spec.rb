@@ -28,6 +28,7 @@ describe 'Attending Events', type: :feature do
     sleep 1
     click_button "I'm Going"
     click_link "Events"
+    sleep 1
     click_link "View Event"
     find('#full_house').should have_content("FULL HOUSE! Find another event to attend here.")
   end
