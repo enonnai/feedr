@@ -7,7 +7,7 @@
   <% @events.reverse.each do |event| %>
   <div class="container thumbnail col-md-6">
     <img src="<%= event.event_picture %>" class="img-responsive", height="375">
-    <div class="caption">
+    <div class="caption" style="text-align: center;">
       <h3><%= event.title %></h3>
       <br>
       <% if current_user %>
