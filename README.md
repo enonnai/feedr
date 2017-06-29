@@ -1,4 +1,74 @@
 # feedr
+by Makers Academy Remote April 2017
+
+### About
+feedr is a revolutionary web-app that brings local diners together for a night of great food and wine!
+Diners attend a dinner party and as the night comes to an end, can donate to the host for the night.
+
+---
+## Visit our Heroku site
+https://f-e-e-d-r.herokuapp.com/
+
+## Or run locally
+View the repository [here](https://github.com/DSeanGray/feedr) on GitHub
+
+```bash
+git clone git@github.com:DSeanGray/feedr.git
+bundle install
+bin/rails db:create
+bin/rails db:migrate
+```
+### To run the test suite
+```bash
+rspec
+```
+
+### To view in browser
+```bash
+bin/rails server
+```
+Then visit localhost:3000
+
+---
+## Processes
+* XP (Extreme Programming)
+* Agile
+* Pair programming
+* TDD
+* Remote collaboration
+
+---
+## Technologies
+
+* [Ruby](https://www.ruby-lang.org/en/) as the main back-end language
+* [Rails 5](http://rubyonrails.org/) for the framework
+* [PostgreSQL](https://www.postgresql.org/) for handling databases
+* [Capybara](https://github.com/teamcapybara/capybara) for acceptance testing
+* [GitHub](https://github.com/makersacademy/acebook-remote-april-2017) for storing our work
+* [Waffle](https://waffle.io/) for tracking and organising workflow
+* [Heroku](https://f-e-e-d-r.herokuapp.com/) for hosting our website
+* Bootstrap
+* Git for version managing
+
+## Gems
+
+* [Devise](https://github.com/plataformatec/devise)
+* [Acts As Votable](https://github.com/ryanto/acts_as_votable)
+* [Geocoder](https://github.com/alexreisner/geocoder)
+* [HTTParty](https://github.com/jnunemaker/httparty)
+
+## APIs
+
+* Google Maps JavaScript API
+* Google Maps Distance Matrix API
+* Stripe Checkout API
+
+## Images
+All images are stored on [Imgur](http://i.imgur.com/1O64JDt.png
+)
+
+
+# feedr
 
 Feedr is a revolutionary app to bring local diners together for a night of great food and wine!
 Diners attend a dinner party and as the night comes to an end, can donate to the host for the night and leave a rating on the app.
