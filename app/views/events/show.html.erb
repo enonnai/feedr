@@ -33,7 +33,7 @@
     }
   </script>
   <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY3o7mGPlAyjeyr1L3pLBROlFd2v75hM8&callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["API_KEY"] %>&callback=initMap">
   </script>
   <div id='latitude'><%= @event.latitude %></div>
   <div id='longitude'><%= @event.longitude %></div>
