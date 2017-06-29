@@ -63,8 +63,7 @@ Then visit localhost:3000
 
 ---
 
-## Gems
-
+## Gems
 
 * [Devise](https://github.com/plataformatec/devise)
 * [Acts As Votable](https://github.com/ryanto/acts_as_votable)
