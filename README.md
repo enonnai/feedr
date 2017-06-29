@@ -1,5 +1,5 @@
 # feedr
-by [Team feedr](#Team feedr) - Makers Academy Remote April 2017 final project
+by [Team feedr](#team-feedr) - Makers Academy Remote April 2017 final project
 
 ### About
 feedr is a revolutionary web-app that brings local diners together for a night of great food and wine!
@@ -40,6 +40,7 @@ Then visit localhost:3000
 * [Jonathan Elliot](https://github.com/jonathanelliot)
 
 ---
+
 ## Processes
 * XP (Extreme Programming)
 * Agile
@@ -61,7 +62,9 @@ Then visit localhost:3000
 * Git for version managing
 
 ---
+
 ## Gems
+
 
 * [Devise](https://github.com/plataformatec/devise)
 * [Acts As Votable](https://github.com/ryanto/acts_as_votable)
