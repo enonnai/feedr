@@ -4,8 +4,7 @@
 <br>
 <br>
 <br>
-
-  <% @events.reverse.each do |event| %>
+<% @events.reverse.each do |event| %>
   <div class="col-md-6">
     <div class="container thumbnail col-md-10 col-sm-11 col-md-offset-1">
       <img src="<%= event.event_picture %>" class="img-responsive", style="height:250px">
@@ -19,6 +18,18 @@
         <br>
         <strong>Where: </strong><%= event.address %>
         <br>
+        <% if current_user %>
+          <% if current_user.profile %>
+            <% response = HTTParty.get("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=#{current_user.profile.location}&destinations=#{event.address}&key=AIzaSyDnpY7hqQMSItvfLul9dC251c8ednf5hos") %>
+            <% json = JSON.parse(response.body) %>
+            <% dist = json['rows'][0]['elements'][0]['distance']['text'] %>
+            <strong>Distance:</strong> <%=dist%>les
+          <% else %>
+            Create a Profile to see how far you are from this event!
+          <% end %>
+        <% else %>
+          Sign up to see how far you are from this event!
+        <% end %>
         <br>
         <%= link_to "View Event", event_path(event), class: "btn col-md-12 col-xs-12 btn-primary"%>
         <br>
@@ -26,4 +37,4 @@
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>

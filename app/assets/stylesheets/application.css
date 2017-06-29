@@ -13,3 +13,19 @@
   background-color: #6CB33F;
   color: white;
 }
+
+.footerholder {
+    background: none repeat scroll 0 0 transparent;
+    color: white;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+.footer {
+    background: none repeat scroll #6CB33F;
+    height: 50px;
+    margin: auto;
+    width: 100%;
+}
