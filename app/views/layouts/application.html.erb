@@ -74,15 +74,16 @@
       <% if flash[:notice] %>
         <% if flash[:notice].is_a? Array %>
         <ul id='errors'>
+          <div class='alert alert-warning'>
           <% flash[:notice].each do |error| %>
             <li><%= error %></li>
           <% end %>
+        </div>
          <% else %>
-           <%= flash[:notice] %>
+           <div class='alert alert-success'><strong><%= flash[:notice] %></strong></div>
         </ul>
          <% end %>
       <% end %>
-      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
   </body>
