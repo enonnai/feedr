@@ -42,7 +42,7 @@ describe 'Attending Events', type: :feature do
     sign_up_2
     click_link "Events"
     click_link "View Event"
-    sleep 1
+    sleep 3
     click_button "I'm Going"
     click_link "Events"
     click_link "View Event"
