@@ -11,6 +11,7 @@ ruby '2.4.0'
 gem 'rails', '~> 5.1.1'
 gem 'selenium-webdriver'
 gem "paperclip", "~> 5.0.0"
+gem 'aws-sdk', '~> 2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 gem 'dotenv-rails', groups: [:development, :test]
