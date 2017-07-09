@@ -7,7 +7,7 @@ Diners attend a dinner party and as the night comes to an end, can donate to the
 
 ---
 ## Visit our Heroku site
-https://f-e-e-d-r.herokuapp.com/
+https://the-feedr-app.herokuapp.com/
 
 ## Or run locally
 View the repository [here](https://github.com/DSeanGray/feedr) on GitHub
